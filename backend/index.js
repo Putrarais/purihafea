@@ -14,10 +14,11 @@ const JWT_SECRET = 'purihafea-secret-key-2024';
 
 // ========== DATABASE ==========
 const db = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '', // kosongkan jika XAMPP default
-  database: 'purihafea',
+    host: process.env.MYSQLHOST || 'localhost',
+    user: process.env.MYSQLUSER || 'root',
+    password: process.env.MYSQLPASSWORD || '',
+    database: process.env.MYSQLDATABASE || 'purihafea',
+    port: process.env.MYSQLPORT || 3306,
   waitForConnections: true,
   connectionLimit: 10,
 });
