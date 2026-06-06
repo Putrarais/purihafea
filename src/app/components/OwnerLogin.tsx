@@ -24,7 +24,6 @@ export function OwnerLogin({ onLoginSuccess, onSwitchToRegister }: OwnerLoginPro
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${accessToken}`
           },
           body: JSON.stringify({ email, password })
         }
